@@ -20,14 +20,25 @@ def Sample.call(cycles=nil, warmup_cycles: nil, recorder: nil, gc: true, &action
   Measure.(&action)
 end
 
-Sample.(10) do
+result = Sample.(10) do
   some_stuff
 end
 
-Sample.(10, warmup_cycles: 10) do
+x = Sample.(10, warmup_cycles: 10) do
   some_stuff
 end
 
-Sample.(10, warmup_cycles: 10, recorder: pg_recorder, gc: false) do
+x = Sample.(10, warmup_cycles: 10, recorder: pg_recorder, gc: false) do
   some_stuff
+end
+
+
+class Result
+  attribute :cycles
+  attribute :warmup_cycles
+  attribute :cycle_time
+  attribute :warmup_cycle_time
+
+  def print
+  end
 end
