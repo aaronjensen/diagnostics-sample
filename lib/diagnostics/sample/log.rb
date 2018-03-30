@@ -1,5 +1,5 @@
 module Diagnostics
-  module Sample
+  class Sample
     class Log < ::Log
       def tag!(tags)
         tags << :diagnostics_sample

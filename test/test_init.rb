@@ -10,3 +10,6 @@ require 'test_bench'; TestBench.activate
 require 'pp'
 
 require 'diagnostics/sample/controls'
+
+Sample = Diagnostics::Sample
+Controls = Diagnostics::Sample::Controls
