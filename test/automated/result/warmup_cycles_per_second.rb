@@ -4,15 +4,16 @@ context "Result" do
   context "Warmup Cycles Per Second" do
     result = Sample::Result.new
 
-    result.warmup_cycles = 4
-    result.warmup_cycle_time_milliseconds = 100.0
+    values = Controls::Frequency::Values.milliseconds
 
-    assert(result.warmup_cycles_per_second == 40)
-
-    result.warmup_cycle(100.0)
+    values.each do |value|
+      result.warmup_cycle(value)
+    end
 
     test "Warmup cycles is divided by elapsed warmup cycle time" do
-      assert(result.warmup_cycles_per_second == 25)
+      control_frequency = Controls::Frequency::Result.example
+
+      assert(result.warmup_cycles_per_second == control_frequency)
     end
   end
 end
