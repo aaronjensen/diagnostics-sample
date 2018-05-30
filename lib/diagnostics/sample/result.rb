@@ -11,6 +11,8 @@ module Diagnostics
       attribute :warmup_cycle_time_milliseconds, Float, default: 0.0
       attribute :warmup_cycle_time_sum_squares, Float, default: 0.0
 
+      alias_method :total_time_milliseconds, :cycle_time_milliseconds
+
       def cycle(elapsed_time)
         self.cycle_time_milliseconds += elapsed_time
 
@@ -57,9 +59,10 @@ module Diagnostics
       end
 
       def digest
-        <<~TEXT % [cycle_time_milliseconds, mean_cycle_time_milliseconds, standard_deviation, cycles_per_second]
-          Cycle Time: %fms
-          Mean Cycle Time: %fms (± %fms)
+        <<~TEXT % [cycles, total_time_milliseconds, mean_cycle_time_milliseconds, standard_deviation, cycles_per_second]
+          Cycles: %d
+          Total Time: %fms
+          Mean Time: %fms (± %fms)
           Cycles Per Second: %f
         TEXT
       end
