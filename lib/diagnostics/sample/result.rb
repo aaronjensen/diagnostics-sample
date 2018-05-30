@@ -23,7 +23,7 @@ module Diagnostics
         cycle_time_milliseconds / cycles
       end
 
-      def cycle_frequency
+      def cycles_per_second
         cycles / (cycle_time_milliseconds / 1_000)
       end
 
@@ -32,6 +32,7 @@ module Diagnostics
 
         Math.sqrt(variance)
       end
+      alias_method :standard_deviation, :cycle_time_standard_deviation
 
       def warmup_cycle(elapsed_time)
         self.warmup_cycle_time_milliseconds += elapsed_time
@@ -45,7 +46,7 @@ module Diagnostics
         warmup_cycle_time_milliseconds / warmup_cycles
       end
 
-      def warmup_cycle_frequency
+      def warmup_cycles_per_second
         warmup_cycles / (warmup_cycle_time_milliseconds / 1_000)
       end
 
