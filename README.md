@@ -26,7 +26,7 @@ end
 result.cycle_time_milliseconds
 # => 11111.11
 
-# Average elapsted time across all cycles
+# Average elapsed time across all cycles
 result.mean_cycle_time_milliseconds
 # => 11.1
 
