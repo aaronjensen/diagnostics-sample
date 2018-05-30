@@ -34,14 +34,14 @@ module Diagnostics
         instance.()
       end
 
-      def call
+      def call(arg=nil)
         logger.trace { "Measuring action (GC: #{gc.inspect})" }
 
         ::GC.disable unless gc
 
         start_time = clock.now
 
-        action.()
+        action.(arg)
 
         end_time = clock.now
 
