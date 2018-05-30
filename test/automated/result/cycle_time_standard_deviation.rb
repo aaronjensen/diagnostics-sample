@@ -4,9 +4,9 @@ context "Result" do
   context "Cycle Time Standard Deviation" do
     result = Sample::Result.new
 
-    cycle_times = [2, 4, 4, 4, 5, 5, 7, 9]
+    cycle_times = Controls::StandardDeviation.values
 
-    standard_deviation = 2
+    standard_deviation = Controls::StandardDeviation.result
 
     cycle_times.each do |elapsed_time|
       result.cycle(elapsed_time)
