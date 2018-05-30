@@ -61,7 +61,7 @@ module Diagnostics
       def digest
         <<~TEXT % [cycles, total_time_milliseconds, mean_cycle_time_milliseconds, standard_deviation, cycles_per_second]
           Cycles: %d
-          Total Time: %fms
+          Time: %fms
           Mean Time: %fms (± %fms)
           Cycles Per Second: %f
         TEXT

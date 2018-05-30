@@ -2,28 +2,32 @@ module Diagnostics
   class Sample
     module Controls
       module Result
+        extend StandardDeviation::Values
+        extend self
+
         def self.example
           result = Sample::Result.new
 
-          StandardDeviation::Values.example.each do |value|
+          values.each do |value|
             result.cycle(value)
           end
 
           result
         end
 
-        module Digest
-          def self.example
-            values = [
-              StandardDeviation::Values.sum,
-              StandardDeviation::Values.mean,
-              StandardDeviation::Result.example,
-              StandardDeviation::Values.frequency
-            ]
+        def standard_deviation
+          StandardDeviation::Result.example
+        end
 
-            <<~TEXT % values
-              Cycle Time: %fms
-              Mean Cycle Time: %fms (± %fms)
+        module Digest
+          extend StandardDeviation::Values
+          extend Result
+
+          def self.example
+            <<~TEXT % [count, sum, mean, standard_deviation, frequency]
+              Cycles: %d
+              Time: %fms
+              Mean Time: %fms (± %fms)
               Cycles Per Second: %f
             TEXT
           end
