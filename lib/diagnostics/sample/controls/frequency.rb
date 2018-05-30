@@ -4,13 +4,13 @@ module Diagnostics
       module Frequency
         module Values
           def self.milliseconds
-            [25, 25, 25, 25, 100]
+            Mean::Values.example
           end
         end
 
         module Result
           def self.example
-            25
+            1_000 / Mean::Result.example
           end
         end
       end

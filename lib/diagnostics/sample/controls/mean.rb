@@ -4,13 +4,13 @@ module Diagnostics
       module Mean
         module Values
           def self.example
-            [1, 0, 11]
+            [1, 1, 1, 11, 111]
           end
         end
 
         module Result
           def self.example
-            4
+            25
           end
         end
       end
