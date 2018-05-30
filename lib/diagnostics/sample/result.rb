@@ -27,6 +27,14 @@ module Diagnostics
       def mean_warmup_cycle_time_milliseconds
         warmup_cycle_time_milliseconds / warmup_cycles
       end
+
+      def cycle_frequency
+        cycles / (cycle_time_milliseconds / 1_000)
+      end
+
+      def warmup_cycle_frequency
+        warmup_cycles / (warmup_cycle_time_milliseconds / 1_000)
+      end
     end
   end
 end
