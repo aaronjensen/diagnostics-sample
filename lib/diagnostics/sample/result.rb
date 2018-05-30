@@ -58,10 +58,10 @@ module Diagnostics
 
       def digest
         <<~TEXT % [cycle_time_milliseconds, mean_cycle_time_milliseconds, cycles_per_second, cycle_time_standard_deviation]
-          Cycle Time (Milliseconds): %0.2f
-          Mean Cycle Time (Milliseconds): %0.2f
-          Cycles Per Second: %.02f
-          Cycle Time Standard Deviation (Milliseconds): %.02f
+          Cycle Time: %fms
+          Mean Cycle Time: %fms
+          Cycles Per Second: %f
+          Cycle Time Standard Deviation: %fms
         TEXT
       end
       alias_method :to_s, :digest

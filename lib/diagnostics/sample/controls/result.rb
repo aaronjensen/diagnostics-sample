@@ -22,10 +22,10 @@ module Diagnostics
             ]
 
             <<~TEXT % values
-              Cycle Time (Milliseconds): %0.2f
-              Mean Cycle Time (Milliseconds): %0.2f
-              Cycles Per Second: %.02f
-              Cycle Time Standard Deviation (Milliseconds): %.02f
+              Cycle Time: %fms
+              Mean Cycle Time: %fms
+              Cycles Per Second: %f
+              Cycle Time Standard Deviation: %fms
             TEXT
           end
         end

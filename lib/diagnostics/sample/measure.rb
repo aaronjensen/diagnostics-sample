@@ -47,11 +47,11 @@ module Diagnostics
 
         ::GC.enable unless gc
 
-        elapsed_time = end_time - start_time
+        elapsed_time_nanoseconds = end_time - start_time
 
-        logger.trace { "Action measured (GC: #{gc.inspect}, Elapsed Time: #{LogText.elapsed_time_milliseconds(elapsed_time)})" }
+        logger.trace { "Action measured (GC: #{gc.inspect}, Elapsed Time: #{LogText.elapsed_time_milliseconds(elapsed_time_nanoseconds)})" }
 
-        elapsed_time
+        elapsed_time_nanoseconds
       end
 
       module LogText

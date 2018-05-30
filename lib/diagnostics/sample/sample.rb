@@ -41,7 +41,9 @@ module Diagnostics
       logger.trace { "Starting warmup (Warmup Cycles: #{warmup_cycles})" }
 
       warmup_cycles.times do
-        elapsed_time = measure.()
+        elapsed_time_nanoseconds = measure.()
+
+        elapsed_time = milliseconds(elapsed_time_nanoseconds)
 
         result.warmup_cycle(elapsed_time)
       end
@@ -51,7 +53,9 @@ module Diagnostics
       logger.trace { "Starting sample (Cycles: #{cycles}, Warmup Cycles: #{warmup_cycles})" }
 
       cycles.times do
-        elapsed_time = measure.()
+        elapsed_time_nanoseconds = measure.()
+
+        elapsed_time = milliseconds(elapsed_time_nanoseconds)
 
         result.cycle(elapsed_time)
       end
@@ -59,6 +63,10 @@ module Diagnostics
       logger.info { "Finished sample (Cycles: #{cycles}, Warmup Cycles: #{warmup_cycles}, Mean Cycle Time: #{result.mean_cycle_time_milliseconds}ms)" }
 
       result
+    end
+
+    def milliseconds(nanoseconds)
+      Rational(nanoseconds, 1_000_000)
     end
   end
 end
