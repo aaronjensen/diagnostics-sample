@@ -22,7 +22,7 @@ result = Diagnostics::Sample.(1000) do
   some_method(...)
 end
 
-# Total elapsted time across all cycles
+# Total elapsed time across all cycles
 result.cycle_time_milliseconds
 # => 11111.11
 
