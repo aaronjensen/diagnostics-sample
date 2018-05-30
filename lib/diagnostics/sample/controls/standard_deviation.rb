@@ -7,6 +7,18 @@ module Diagnostics
           def self.example
             [2, 4, 4, 4, 5, 5, 7, 9]
           end
+
+          def self.sum
+            40
+          end
+
+          def self.mean
+            5
+          end
+
+          def self.frequency
+            200
+          end
         end
 
         module Result
