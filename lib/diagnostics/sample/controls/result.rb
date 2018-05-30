@@ -17,15 +17,14 @@ module Diagnostics
             values = [
               StandardDeviation::Values.sum,
               StandardDeviation::Values.mean,
-              StandardDeviation::Values.frequency,
-              StandardDeviation::Result.example
+              StandardDeviation::Result.example,
+              StandardDeviation::Values.frequency
             ]
 
             <<~TEXT % values
               Cycle Time: %fms
-              Mean Cycle Time: %fms
+              Mean Cycle Time: %fms (± %fms)
               Cycles Per Second: %f
-              Cycle Time Standard Deviation: %fms
             TEXT
           end
         end
