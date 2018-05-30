@@ -9,7 +9,7 @@ context "Measure" do
 
   control_elapsed_time = 0.001
 
-  measure = Diagnostics::Sample::Measure.new(action)
+  measure = Sample::Measure.new(action)
 
   measure.clock = Controls::Clock.example(interval: control_elapsed_time)
 

@@ -4,7 +4,7 @@ measurement_subject = proc {
   sleep 0.01
 }
 
-result = Diagnostics::Sample.(300) do
+result = Sample.(300) do
   measurement_subject.()
 end
 
