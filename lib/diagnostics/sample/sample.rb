@@ -40,8 +40,8 @@ module Diagnostics
     def call
       logger.trace { "Starting warmup (Warmup Cycles: #{warmup_cycles})" }
 
-      warmup_cycles.times do
-        elapsed_time_nanoseconds = measure.()
+      warmup_cycles.times do |iteration|
+        elapsed_time_nanoseconds = measure.(iteration)
 
         elapsed_time = milliseconds(elapsed_time_nanoseconds)
 
@@ -52,8 +52,8 @@ module Diagnostics
 
       logger.trace { "Starting sample (Cycles: #{cycles}, Warmup Cycles: #{warmup_cycles})" }
 
-      cycles.times do
-        elapsed_time_nanoseconds = measure.()
+      cycles.times do |iteration|
+        elapsed_time_nanoseconds = measure.(iteration + self.warmup_cycles)
 
         elapsed_time = milliseconds(elapsed_time_nanoseconds)
 
