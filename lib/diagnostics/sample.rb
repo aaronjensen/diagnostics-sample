@@ -11,3 +11,5 @@ require 'diagnostics/sample/log'
 require 'diagnostics/sample/measure'
 require 'diagnostics/sample/measure/clock'
 require 'diagnostics/sample/result'
+
+require 'diagnostics/sample/sample'

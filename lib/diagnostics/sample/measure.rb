@@ -2,6 +2,9 @@ module Diagnostics
   class Sample
     class Measure
       include Log::Dependency
+      extend Configure::Macro
+
+      configure :measure
 
       dependency :clock, Clock
 
@@ -18,14 +21,16 @@ module Diagnostics
         Clock.configure(self)
       end
 
-      def self.build(gc: nil, &action)
+      def self.build(gc: nil, action: nil, &block_action)
+        action ||= block_action
+
         instance = new(action)
         instance.configure(gc: gc)
         instance
       end
 
-      def self.call(gc: nil, &action)
-        instance = build(gc: gc, &action)
+      def self.call(gc: nil, action: nil, &block_action)
+        instance = build(gc: gc, action: action, &block_action)
         instance.()
       end
 
