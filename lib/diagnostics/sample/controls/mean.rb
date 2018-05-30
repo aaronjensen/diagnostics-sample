@@ -2,12 +2,16 @@ module Diagnostics
   class Sample
     module Controls
       module Mean
-        def self.values
-          [1, 0, 11]
+        module Values
+          def self.example
+            [1, 0, 11]
+          end
         end
 
-        def self.result
-          4
+        module Result
+          def self.example
+            4
+          end
         end
       end
     end
