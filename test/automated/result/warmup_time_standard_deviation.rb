@@ -1,7 +1,7 @@
 require_relative '../automated_init'
 
 context "Result" do
-  context "Warmup Cycle Time Standard Deviation" do
+  context "Warmup Time Standard Deviation" do
     result = Sample::Result.new
 
     warmup_times = Controls::StandardDeviation::Values.example

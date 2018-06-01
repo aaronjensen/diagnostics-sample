@@ -1,7 +1,7 @@
 require_relative '../automated_init'
 
 context "Result" do
-  context "Cycle Time Standard Deviation" do
+  context "Time Standard Deviation" do
     result = Sample::Result.new
 
     times = Controls::StandardDeviation::Values.example
