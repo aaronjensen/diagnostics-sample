@@ -21,7 +21,7 @@ module Diagnostics
         self.cycles += 1
       end
 
-      def mean_time_milliseconds
+      def mean_cycle_time_milliseconds
         time_milliseconds / cycles
       end
 
@@ -30,7 +30,7 @@ module Diagnostics
       end
 
       def time_standard_deviation
-        variance = (time_sum_squares / cycles) - (mean_time_milliseconds ** 2)
+        variance = (time_sum_squares / cycles) - (mean_cycle_time_milliseconds ** 2)
 
         Math.sqrt(variance)
       end
@@ -59,10 +59,10 @@ module Diagnostics
       end
 
       def digest
-        <<~TEXT % [cycles, time_milliseconds, mean_time_milliseconds, standard_deviation, cycles_per_second, gc]
+        <<~TEXT % [cycles, time_milliseconds, mean_cycle_time_milliseconds, standard_deviation, cycles_per_second, gc]
           Cycles: %d
           Time: %fms
-          Mean Time: %fms (± %fms)
+          Mean Cycle Time: %fms (± %fms)
           Cycles Per Second: %f
           GC: #{gc ? 'on' : 'off'}
         TEXT

@@ -31,7 +31,7 @@ module Diagnostics
             <<~TEXT % [count, sum, mean, standard_deviation, frequency, gc]
               Cycles: %d
               Time: %fms
-              Mean Time: %fms (± %fms)
+              Mean Cycle Time: %fms (± %fms)
               Cycles Per Second: %f
               GC: #{gc ? 'on' : 'off'}
             TEXT
