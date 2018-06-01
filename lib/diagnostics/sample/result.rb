@@ -13,8 +13,6 @@ module Diagnostics
 
       attribute :gc, Boolean, default: false
 
-      alias_method :total_time_milliseconds, :time_milliseconds
-
       def cycle(elapsed_time)
         self.time_milliseconds += elapsed_time
 
@@ -61,7 +59,7 @@ module Diagnostics
       end
 
       def digest
-        <<~TEXT % [cycles, total_time_milliseconds, mean_time_milliseconds, standard_deviation, cycles_per_second, gc]
+        <<~TEXT % [cycles, time_milliseconds, mean_time_milliseconds, standard_deviation, cycles_per_second, gc]
           Cycles: %d
           Time: %fms
           Mean Time: %fms (± %fms)
