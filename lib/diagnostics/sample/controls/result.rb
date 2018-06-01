@@ -23,12 +23,17 @@ module Diagnostics
           extend StandardDeviation::Values
           extend Result
 
+          def self.gc
+            false
+          end
+
           def self.example
-            <<~TEXT % [count, sum, mean, standard_deviation, frequency]
+            <<~TEXT % [count, sum, mean, standard_deviation, frequency, gc]
               Cycles: %d
               Time: %fms
               Mean Time: %fms (± %fms)
               Cycles Per Second: %f
+              GC: #{gc ? 'on' : 'off'}
             TEXT
           end
         end

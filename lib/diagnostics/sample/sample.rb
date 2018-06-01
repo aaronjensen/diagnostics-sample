@@ -4,7 +4,9 @@ module Diagnostics
 
     dependency :measure, Measure
 
-    def configure(action: nil, gc: nil)
+    initializer :result
+
+    def configure(action: nil, gc: gc)
       Measure.configure(self, action: action, gc: gc)
     end
 
@@ -18,12 +20,13 @@ module Diagnostics
       @warmup_cycles ||= Defaults.warmup_cycles
     end
 
-    def result
-      @result ||= Result.new
-    end
-
     def self.build(cycles=nil, warmup_cycles: nil, gc: nil, &action)
-      instance = new
+      gc = Defaults.gc if gc.nil?
+
+      result = Result.new
+      result.gc = gc
+
+      instance = new(result)
 
       instance.cycles = cycles unless cycles.nil?
       instance.warmup_cycles = warmup_cycles unless warmup_cycles.nil?
