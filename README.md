@@ -11,7 +11,7 @@ result = Diagnostics::Sample.() do
   some_method(...)
 end
 
-result.cycle_time_milliseconds
+result.time_milliseconds
 # => 11.1
 ```
 
@@ -23,11 +23,11 @@ result = Diagnostics::Sample.(1000) do
 end
 
 # Total elapsed time across all cycles
-result.cycle_time_milliseconds
+result.time_milliseconds
 # => 11111.11
 
 # Average elapsed time across all cycles
-result.mean_cycle_time_milliseconds
+result.mean_time_milliseconds
 # => 11.1
 
 # Cycles per second

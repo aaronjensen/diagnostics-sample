@@ -13,7 +13,7 @@ context "Result" do
     test "Mean is calculated by dividing elapsed time by cycles" do
       control_mean = Controls::Mean::Result.example
 
-      assert(result.mean_cycle_time_milliseconds == control_mean)
+      assert(result.mean_time_milliseconds == control_mean)
     end
   end
 end

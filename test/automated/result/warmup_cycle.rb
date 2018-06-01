@@ -5,7 +5,7 @@ context "Result" do
     result = Sample::Result.new
 
     result.warmup_cycles = 11
-    result.warmup_cycle_time_milliseconds = 11.1
+    result.warmup_time_milliseconds = 11.1
 
     result.warmup_cycle(1.0)
 
@@ -14,7 +14,7 @@ context "Result" do
     end
 
     test "Total warmup cycle time is increased by elapsed time" do
-      assert(result.warmup_cycle_time_milliseconds == 12.1)
+      assert(result.warmup_time_milliseconds == 12.1)
     end
   end
 end

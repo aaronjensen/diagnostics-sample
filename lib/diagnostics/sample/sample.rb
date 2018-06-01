@@ -63,7 +63,7 @@ module Diagnostics
         result.cycle(elapsed_time)
       end
 
-      logger.info { "Finished sample (Cycles: #{cycles}, Warmup Cycles: #{warmup_cycles}, Mean Cycle Time: #{result.mean_cycle_time_milliseconds}ms)" }
+      logger.info { "Finished sample (Cycles: #{cycles}, Warmup Cycles: #{warmup_cycles}, Mean Cycle Time: #{result.mean_time_milliseconds}ms)" }
 
       result
     end
