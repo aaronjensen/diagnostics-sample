@@ -36,8 +36,8 @@ end
 class Result
   attribute :cycles
   attribute :warmup_cycles
-  attribute :cycle_time
-  attribute :warmup_cycle_time
+  attribute :time
+  attribute :warmup_time
 
   def print
   end

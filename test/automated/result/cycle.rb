@@ -5,7 +5,7 @@ context "Result" do
     result = Sample::Result.new
 
     result.cycles = 11
-    result.cycle_time_milliseconds = 11.1
+    result.time_milliseconds = 11.1
 
     result.cycle(1.0)
 
@@ -14,7 +14,7 @@ context "Result" do
     end
 
     test "Total cycle time is increased by elapsed time" do
-      assert(result.cycle_time_milliseconds == 12.1)
+      assert(result.time_milliseconds == 12.1)
     end
   end
 end
