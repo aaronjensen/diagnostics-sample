@@ -6,7 +6,7 @@ module Diagnostics
 
     initializer :result
 
-    def configure(action: nil, gc: gc)
+    def configure(action: nil, gc: nil)
       Measure.configure(self, action: action, gc: gc)
     end
 
