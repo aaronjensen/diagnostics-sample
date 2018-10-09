@@ -7,6 +7,8 @@ module Diagnostics
         end
 
         class Incrementing
+          Initializer.activate(self)
+
           def elapsed_seconds
             @elapsed_seconds ||= 0
           end

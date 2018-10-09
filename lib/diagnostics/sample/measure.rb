@@ -1,6 +1,8 @@
 module Diagnostics
   class Sample
     class Measure
+      Initializer.activate(self)
+
       include Log::Dependency
       extend Configure::Macro
 
