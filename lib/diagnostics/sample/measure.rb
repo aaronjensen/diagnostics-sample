@@ -3,9 +3,9 @@ module Diagnostics
     class Measure
       Dependency.activate(self)
       Initializer.activate(self)
+      Configure.activate(self)
 
       include Log::Dependency
-      extend Configure::Macro
 
       configure :measure
 
