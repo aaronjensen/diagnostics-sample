@@ -1,5 +1,6 @@
 module Diagnostics
   class Sample
+    Dependency.activate(self)
     Initializer.activate(self)
 
     include Log::Dependency
