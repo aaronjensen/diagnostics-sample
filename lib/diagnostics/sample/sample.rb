@@ -1,8 +1,7 @@
 module Diagnostics
   class Sample
-    Dependency.activate(self)
-    Initializer.activate(self)
-
+    include Dependency
+    include Initializer
     include Log::Dependency
 
     dependency :measure, Measure
