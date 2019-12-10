@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 Gem::Specification.new do |s|
   s.name = 'evt-diagnostics-sample'
-  s.version = '1.0.0.0'
+  s.version = '2.0.0.0'
   s.summary = 'Sampling and measurement of execution cycles'
   s.description = ' '
 
