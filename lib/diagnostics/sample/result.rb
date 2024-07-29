@@ -3,15 +3,15 @@ module Diagnostics
     class Result
       include Schema::DataStructure
 
-      attribute :cycles, Integer, default: proc { 0 }
-      attribute :time_milliseconds, Float, default: proc { 0.0 }
-      attribute :time_sum_squares, Float, default: proc { 0.0 }
+      attribute :cycles, Integer, default: -> { 0 }
+      attribute :time_milliseconds, Float, default: -> { 0.0 }
+      attribute :time_sum_squares, Float, default: -> { 0.0 }
 
-      attribute :warmup_cycles, Integer, default: proc { 0 }
-      attribute :warmup_time_milliseconds, Float, default: proc { 0.0 }
-      attribute :warmup_time_sum_squares, Float, default: proc { 0.0 }
+      attribute :warmup_cycles, Integer, default: -> { 0 }
+      attribute :warmup_time_milliseconds, Float, default: -> { 0.0 }
+      attribute :warmup_time_sum_squares, Float, default: -> { 0.0 }
 
-      attribute :gc, Boolean, default: proc { false }
+      attribute :gc, Boolean, default: -> { false }
 
       def cycle(elapsed_time)
         self.time_milliseconds += elapsed_time
