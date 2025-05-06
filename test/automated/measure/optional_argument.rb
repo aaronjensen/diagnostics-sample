@@ -1,4 +1,4 @@
-require_relative '../automated_init'
+require_relative "../automated_init"
 
 context "Measure" do
   context "Optional Argument" do
@@ -8,10 +8,10 @@ context "Measure" do
       argument = arg
     end
 
-    measure.('some-value')
+    measure.("some-value")
 
     test "Argument is passed to action" do
-      assert(argument == 'some-value')
+      assert(argument == "some-value")
     end
   end
 end

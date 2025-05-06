@@ -1,4 +1,4 @@
-require_relative '../automated_init'
+require_relative "../automated_init"
 
 context "Result" do
   context "Mean Warmup Cycle Time" do

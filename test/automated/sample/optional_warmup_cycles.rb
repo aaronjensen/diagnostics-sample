@@ -1,4 +1,4 @@
-require_relative '../automated_init'
+require_relative "../automated_init"
 
 context "Sample" do
   context "Optional Warmup Cycles" do

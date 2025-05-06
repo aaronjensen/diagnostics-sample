@@ -64,7 +64,7 @@ module Diagnostics
           Time: %fms
           Mean Cycle Time: %fms (± %fms)
           Cycles Per Second: %f
-          GC: #{gc ? 'on' : 'off'}
+          GC: #{gc ? "on" : "off"}
         TEXT
       end
       alias_method :to_s, :digest

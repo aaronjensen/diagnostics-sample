@@ -1,4 +1,4 @@
-require_relative './interactive_init'
+require_relative "./interactive_init"
 
 measurement_subject = proc {
   sleep 0.01
