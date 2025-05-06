@@ -18,8 +18,8 @@ context "Measure" do
       context "Current Time Not Set" do
         substitute = SubstAttr::Substitute.build(Sample::Measure::Clock)
 
-        test "Returns nothing" do
-          assert(substitute.now == nil)
+        test "Returns current time" do
+          refute(substitute.now == nil)
         end
       end
     end
